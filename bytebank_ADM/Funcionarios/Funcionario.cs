@@ -17,7 +17,8 @@ namespace bytebank_ADM.Funcionarios
         public string Cpf { get; set; }
         public double Salario { get; set; }
 
-        public double getBonificacao()
+        //Virtual permite que a classe filha sobrescreva o metodo getBonificação da classe pai
+        public virtual double getBonificacao()
         {
             return Salario * 0.10;
         }
