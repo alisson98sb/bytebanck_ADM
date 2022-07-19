@@ -14,13 +14,27 @@ namespace bytebank_ADM.Funcionarios
         //private int _tipo;
 
         public string Nome { get; set; }
-        public string Cpf { get; set; }
-        public double Salario { get; set; }
+        public string Cpf { get; private set; }
+        public double Salario { get; protected set; }
 
         //Virtual permite que a classe filha sobrescreva o metodo getBonificação da classe pai
         public virtual double getBonificacao()
         {
             return Salario * 0.10;
+        }
+
+        public static int totalDeFuncionarios { get; private set; }
+
+        public Funcionario(string cpf, double salario)
+        {
+            Salario = salario;
+            Cpf = cpf;
+            totalDeFuncionarios++;
+        }
+
+        public virtual void AumentarSalario()
+        {
+            this.Salario *= 1.1; //10%
         }
     }
 }
