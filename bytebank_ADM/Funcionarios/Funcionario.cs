@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace bytebank_ADM.Funcionarios
 {
-    public class Funcionario
+    public abstract class Funcionario
     {
         // 0 - Funcionario
         // 1 - Diretor
@@ -14,12 +14,22 @@ namespace bytebank_ADM.Funcionarios
         //private int _tipo;
 
         public string Nome { get; set; }
-        public string Cpf { get; set; }
-        public double Salario { get; set; }
+        public string Cpf { get; private set; }
+        public double Salario { get; protected set; }
 
-        public double getBonificacao()
+        public static int totalDeFuncionarios { get; private set; }
+
+        public Funcionario(string cpf, double salario)
         {
-            return Salario * 0.10;
+            Salario = salario;
+            Cpf = cpf;
+            totalDeFuncionarios++;
         }
+
+        public abstract void AumentarSalario();
+
+        //Virtual permite que a classe filha sobrescreva o metodo getBonificação da classe pai
+        //Abstract significa que toda classe que herdar de funcionario precisa obrigatóriamente implementar o método getBonificacao. Isso é importante para o caso de esquecer de implementar na classe.
+        public abstract double getBonificacao();
     }
 }

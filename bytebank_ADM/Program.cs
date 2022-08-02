@@ -2,39 +2,34 @@
 using bytebank_ADM.Utilitarios;
 using System;
 
-namespace bytebank_ADM
+CalculaBonificacao();
+
+void CalculaBonificacao()
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Boas vindas ao Bytebank Administração!");
+    Bonificacao gerenciador = new Bonificacao();
 
-            Funcionario joao = new Funcionario();
-            Bonificacao bonificacao = new Bonificacao();
+    Designer pedro = new Designer("833.5565.5696-44");
+    pedro.Nome = "Pedro";
 
-            joao.Nome = "João";
-            joao.Cpf = "05319470777";
-            joao.Salario = 2000;
+    Diretor paula = new Diretor("733.5565.5696-24");
+    paula.Nome = "Paula";
 
-            Diretor Alisson = new Diretor();
-            Alisson.Nome = "Alisson Santana Barbosa";
-            Alisson.Cpf = "05319470177";
-            Alisson.Salario = 30000;
+    Auxiliar igor = new Auxiliar("222.5565.5696-44");
+    igor.Nome = "Igor";
 
-            bonificacao.Registrar(joao);
-            Console.WriteLine("Bonificação do funcionario: " + bonificacao.GetBonificacao());
+    GerenteDeContas camila = new GerenteDeContas("833.5565.5696-44");
+    camila.Nome = "Camila";
 
-            bonificacao.Registrar(Alisson);
-            Console.WriteLine("Bonificação do funcionario + Diretor: " + bonificacao.GetBonificacao());
+    Desenvolvedor samya = new Desenvolvedor("055.194.551-77");
+    samya.Nome = "Samya";
 
+    gerenciador.Registrar(pedro);
+    gerenciador.Registrar(paula);
+    gerenciador.Registrar(igor);
+    gerenciador.Registrar(camila);
+    gerenciador.Registrar(samya);
 
-            //Console.WriteLine(joao.Salario);
-            //Console.WriteLine("Bonificação: " + joao.getBonificacao());
-            //Console.WriteLine("Salario Diretor " + Alisson.Nome + ": " + Alisson.Salario);
-            //Console.WriteLine( "Bonificação Diretor "+ Alisson.Nome +": "+ Alisson.getBonificacao());
-
-
-        }
-    }
+    Console.WriteLine("Total de bonificação: " + gerenciador.GetBonificacao() );
 }
+
+Console.ReadKey();
