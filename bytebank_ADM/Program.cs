@@ -2,55 +2,34 @@
 using bytebank_ADM.Utilitarios;
 using System;
 
-namespace bytebank_ADM
+CalculaBonificacao();
+
+void CalculaBonificacao()
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Boas vindas ao Bytebank Administração!");
+    Bonificacao gerenciador = new Bonificacao();
 
-            Diretor Alisson = new Diretor("05319470177", 5000);
-            Funcionario joao = new Funcionario("05319470777", 2000);
-            Designer Lucas = new Designer("4541564345", 3000);
-            GerenteDeContas Sabrina = new GerenteDeContas("241513165", 4000);
-            Auxiliar Geovana = new Auxiliar("1515313541", 2000);
+    Designer pedro = new Designer("833.5565.5696-44");
+    pedro.Nome = "Pedro";
 
-            Bonificacao bonificacao = new Bonificacao();
+    Diretor paula = new Diretor("733.5565.5696-24");
+    paula.Nome = "Paula";
 
-            joao.Nome = "João";
-            Console.WriteLine("Total de funcionários: "+ Funcionario.totalDeFuncionarios);
+    Auxiliar igor = new Auxiliar("222.5565.5696-44");
+    igor.Nome = "Igor";
 
-            Alisson.Nome = "Alisson Santana Barbosa";
-            Console.WriteLine("Total de funcionários: " + Funcionario.totalDeFuncionarios);
+    GerenteDeContas camila = new GerenteDeContas("833.5565.5696-44");
+    camila.Nome = "Camila";
 
-            Lucas.Nome = "Lusas Designer";
-            Console.WriteLine("Total de funcionários: " + Funcionario.totalDeFuncionarios);
+    Desenvolvedor samya = new Desenvolvedor("055.194.551-77");
+    samya.Nome = "Samya";
 
-            Sabrina.Nome = "Sabrina Almeida Gerente";
-            Console.WriteLine("Total de funcionários: " + Funcionario.totalDeFuncionarios);
+    gerenciador.Registrar(pedro);
+    gerenciador.Registrar(paula);
+    gerenciador.Registrar(igor);
+    gerenciador.Registrar(camila);
+    gerenciador.Registrar(samya);
 
-            Geovana.Nome = "Geovana Auxiliar";
-            Console.WriteLine("Total de funcionários: " + Funcionario.totalDeFuncionarios);
-
-
-            //bonificacao.Registrar(joao);
-            //Console.WriteLine("Bonificação do funcionario: " + bonificacao.GetBonificacao());
-
-
-            //Console.WriteLine("Antigo salário do Alisson: " + Alisson.Salario);
-            //bonificacao.Registrar(Alisson);
-            //Console.WriteLine("Bonificação do funcionario + Diretor: " + bonificacao.GetBonificacao());
-            //Console.WriteLine("Novo salário do Alisson: " + Alisson.Salario);
-
-            //Alisson.AumentarSalario();
-
-            //Console.WriteLine(joao.Salario);
-            //Console.WriteLine("Bonificação: " + joao.getBonificacao());
-            //Console.WriteLine("Salario Diretor " + Alisson.Nome + ": " + Alisson.Salario);
-            //Console.WriteLine("Bonificação Diretor " + Alisson.Nome + ": " + Alisson.getBonificacao());
-
-
-        }
-    }
+    Console.WriteLine("Total de bonificação: " + gerenciador.GetBonificacao() );
 }
+
+Console.ReadKey();

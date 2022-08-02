@@ -8,7 +8,7 @@ namespace bytebank_ADM.Funcionarios
 {
     public class Diretor: Funcionario
     {
-        public Diretor(string cpf, double salario) : base(cpf, salario)
+        public Diretor(string cpf) : base(cpf, 5000)
         {
             Console.WriteLine("Criando um Diretor.");
         }
@@ -23,7 +23,7 @@ namespace bytebank_ADM.Funcionarios
         {
             // Diretor - 100% de bonificação.
             //base: Significa que o método que estamos usando é o getBonificação de Funcionario, e não o que está declarado nesta classe Diretor;
-            return Salario + base.getBonificacao();
+            return Salario * 0.5;
         }
 
 

@@ -6,25 +6,24 @@ using System.Threading.Tasks;
 
 namespace bytebank_ADM.Funcionarios
 {
-    public class Designer: Funcionario
+    public class Desenvolvedor: Funcionario
     {
-        public Designer(string cpf) : base(cpf, 300)
+        public Desenvolvedor(string cpf) : base(cpf, 3000)
         {
-            Console.WriteLine("Criando um Designer.");
+            Console.WriteLine("Criando um Desenvolvedor.");
         }
 
         public override void AumentarSalario()
         {
-            this.Salario *= 1.11; //11%
+            this.Salario *= 0.15; //5%?
         }
 
         //override significa que vamos sobrescrever o metodo getbonificação na classe pai que é virtual. 
         public override double getBonificacao()
         {
-            // Diretor - 17% de bonificação.
+            // GerenteDeContas - 25% de bonificação.
             //base: Significa que o método que estamos usando é o getBonificação de Funcionario, e não o que está declarado nesta classe Diretor;
-            return Salario * 0.17;
+            return Salario * 0.1;
         }
-
     }
 }

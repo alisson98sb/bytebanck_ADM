@@ -8,7 +8,7 @@ namespace bytebank_ADM.Funcionarios
 {
     public class GerenteDeContas: Funcionario
     {
-        public GerenteDeContas(string cpf, double salario) : base(cpf, salario)
+        public GerenteDeContas(string cpf) : base(cpf, 4000)
         {
             Console.WriteLine("Criando um Gerente de Contas.");
         }
@@ -23,7 +23,7 @@ namespace bytebank_ADM.Funcionarios
         {
             // GerenteDeContas - 25% de bonificação.
             //base: Significa que o método que estamos usando é o getBonificação de Funcionario, e não o que está declarado nesta classe Diretor;
-            return Salario + base.getBonificacao();
+            return Salario * 0.25;
         }
 
     }
