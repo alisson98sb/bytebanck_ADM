@@ -41,15 +41,23 @@ void UsarSistema()
     roberta.Nome = "Roberta";
     roberta.Senha = "123321";
 
-    Diretor ursula = new Diretor("395.395.333-99");
+    GerenteDeContas ursula = new GerenteDeContas("395.395.333-99");
     ursula.Nome = "Ursula";
     ursula.Senha = "321123";
+
+    Funcionario pedro = new Desenvolvedor("934.323.808,-33");
+    pedro.Nome = "Pedro";
+    pedro.Senha = "999";
+
 
     //Bem-vindo ao sistema
     sistemaInterno.Logar(roberta, "123321");
 
     //Senha Incorreta
     sistemaInterno.Logar(ursula, "3211e23");
+
+    //Usuário que não precisa de autenticação
+    sistemaInterno.Logar(pedro, "999");
 }
 
 Console.ReadKey();
