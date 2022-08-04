@@ -31,5 +31,6 @@ namespace bytebank_ADM.Funcionarios
         //Virtual permite que a classe filha sobrescreva o metodo getBonificação da classe pai
         //Abstract significa que toda classe que herdar de funcionario precisa obrigatóriamente implementar o método getBonificacao. Isso é importante para o caso de esquecer de implementar na classe.
         public abstract double getBonificacao();
+
     }
 }
