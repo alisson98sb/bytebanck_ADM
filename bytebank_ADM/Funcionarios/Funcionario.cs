@@ -32,12 +32,5 @@ namespace bytebank_ADM.Funcionarios
         //Abstract significa que toda classe que herdar de funcionario precisa obrigatóriamente implementar o método getBonificacao. Isso é importante para o caso de esquecer de implementar na classe.
         public abstract double getBonificacao();
 
-        public string Senha { get; set; }
-
-        public bool Autenticar(string senha)
-        {
-            return this.Senha == senha;
-        }
-
     }
 }
