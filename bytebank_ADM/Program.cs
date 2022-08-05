@@ -1,5 +1,6 @@
 ﻿using bytebank_ADM.Funcionarios;
 using bytebank_ADM.Funcionarios.SistemaInterno;
+using bytebank_ADM.ParceriaComercial;
 using bytebank_ADM.Utilitarios;
 using System;
 
@@ -45,11 +46,16 @@ void UsarSistema()
     ursula.Nome = "Ursula";
     ursula.Senha = "321123";
 
+    ParceiroComercial zecaPagodinho = new ParceiroComercial();
+    zecaPagodinho.Senha = "333";
+
     //Bem-vindo ao sistema
     sistemaInterno.Logar(roberta, "123321");
 
     //Senha Incorreta
     sistemaInterno.Logar(ursula, "3211e23");
+
+    sistemaInterno.Logar(zecaPagodinho, "333");
 
 }
 
